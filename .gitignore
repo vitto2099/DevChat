@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Logs
+logs
+*.log
+logs/*.log
+
+# Editor e sistema operacional
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Diretórios de build/output (se existir)
+dist/
+build/
+
+# Variáveis de ambiente
+.env
+
+# Ignorar node_modules do frontend (se houver)
+frontend/node_modules/
+backend/node_modules/

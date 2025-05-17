@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Chat Console</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Tela de login -->
+  <div id="login-screen" class="screen active">
+    <div class="login-box">
+      <h1>Chat Console</h1>
+      <p>Digite seu nome de usuário para iniciar o chat:</p>
+      <input type="text" id="login-user" placeholder="ex: user" />
+      <button onclick="enterChat()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- Tela do chat -->
+  <div id="chat-screen" class="screen">
+    <header class="header">
+      <h2>Usuário Atual: <span id="user-display"></span></h2>
+      <button onclick="changeUser()">Mudar Nome</button>
+      <button onclick="logout()">Sair</button>
+    </header>
+
+    <main class="chat-card">
+      <div class="chat-box" id="chat"></div>
+
+      <div class="form">
+        <input type="text" id="text" placeholder="Digite sua mensagem..." onkeydown="if(event.key === 'Enter') sendMessage()" />
+        <div class="buttons">
+          <button onclick="sendMessage()" id="send-btn">Enviar</button>
+          <button onclick="loadMessages()">Atualizar</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

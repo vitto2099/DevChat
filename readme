@@ -1,0 +1,12 @@
+npm init -y
+npm install express cors
+npm install 
+node server.js
+
+caso de erro utilizar o comando Set-ExecutionPolicy RemoteSigned
+dentro do Set-ExecutionPolicy RemoteSigned
+// no powershell via administrador 
+
+em dentro de server.js colocar ip do hosteador 
+const API_URL = 'http://localhost:3000/messages'; 
+const API_URL = 'http://192.168.32.94:3000/messages';
