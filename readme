@@ -1,3 +1,4 @@
+de preferencia rodar todo atraves de cd backend
 npm init -y
 npm install express cors
 npm install 
