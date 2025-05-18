@@ -1,0 +1,41 @@
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const app = express();
+const port = 3000;
+
+app.use(cors());
+app.use(express.json());
+
+// Serve arquivos estáticos do frontend
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+let messages = [];
+
+app.get('/messages', (req, res) => {
+  res.json(messages);
+});
+
+app.post('/messages', (req, res) => {
+  const { user, text } = req.body;
+  if (!user || !text) return res.status(400).send('Dados inválidos');
+
+  const message = {
+    user,
+    text,
+    time: new Date().toLocaleTimeString()
+  };
+
+  messages.push(message);
+  res.status(201).json(message);
+});
+
+// Rota principal serve o index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://localhost:${port}`);
+});
+//const API_URL = 'http://192.168.32.94:3000/messages'; pro usuario final
